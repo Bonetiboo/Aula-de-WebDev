@@ -1,6 +1,6 @@
 // If "Ternário" 
 
-let idade1 = 18  
+let idade1 = 18 
 
 let status = idade1 >= 18 ? "Maior de idade." : "Menor de idade" // o ? seria se for verdadeiro faça tal, o : seria o senão faça tal coisa.
 
@@ -11,7 +11,7 @@ console.log(status)
 
 let valor = null
 
-let resultado = valor ?? "Valor padrão." // seria se tal variável é igual a outra verdadeira (no caso não é, por ser nulo), printe o valor de "valor", se não (??) printe outra coisa
+let resultado = valor ?? "Valor padrão." // se tal variável é igual a outra verdadeira (no caso não é, por ser nulo), printe o valor de "valor", se não (??) printe outra coisa
 
 console.log(resultado)
 
