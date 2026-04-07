@@ -1,4 +1,3 @@
-/*
 // Função possui entrada, processamento e saída
 // Estrutura de uma função: function name(parametro1, parametro2) {}
 // "name" é o nome da função em si (dar nomes claros), não existe limite de parâmetros
@@ -115,7 +114,6 @@ function formatarData(data, formato = 'curto') {
   return `${dia}/${mes}/${ano}`;
 }
 console.log("Data formatada:", formatarData(new Date()));
-*/
 
 // Arrow function que retorna a subtração de dois números
 const subtrair = (a, b) => a - b;
