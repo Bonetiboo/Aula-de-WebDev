@@ -1,54 +1,82 @@
-// const titulo = document.querySelector('h1')
+/**
+const { createContext } = require("react")
 
-// console.log("Título representa", titulo)
+const titulo = document.querySelector('h1')
 
-// titulo.textContent = "Novo título"
+console.log(`titulo representa ${titulo}`)
 
-// // const container = document.getElementById("container")
+titulo.textContent = "titulo novo"
 
-// const container = document.querySelector("#container")
+//const container = document.getElementById("container")
+const container = document.querySelector("#container")
 
-// console.log(container)
+console.log(container)
 
-// container.innerHTML = "<p>Novo Parágrafo</p>"
+container.textContent = "<p>p</p>" //errado
+container.innerHTML = "<p>p</p>" //certo, esta interpretenado como codigo html
 
-// const imagem = document.querySelector('img')
-// console.log('imagem')
+const imagem = document.querySelector('img')
+console.log(imagem)
+//troca a imagem
+imagem.setAttribute('src','./img/images2.jpg')
+imagem.alt = "foto show"
 
-// imagem.setAttribute('src','imagens/banana.jpg')
+const caixa = document.querySelector('.box')
+console.log(caixa)
 
-// const caixa = document.getElementsByClassName('box')
-// console.log('caixa')
+caixa.classList.add('oculto')
 
-// const botao = document.getElementById('botao')
-// console.log(botao)
+const botao = document.getElementById('botao')
 
-// botao.addEventListener('click', () => {
-//     caixa.classList.toggle('oculto')
-// }) 
+botao.addEventListener('click', () =>{
+    caixa.classList.toggle('oculto')
+})
 
-// const novoItem = document.createElement('li')
+const novoItem = document.createElement('li')
 
-// novoItem.textContent = "Novo Item"
+novoItem.textContent = "novo item"
 
-// document.querySelector('ul').appendChild
-// (novoItem)
-// novoItem.textContent = new Date().getTime
-// novoItem.remove()
+document.querySelector('ul').appendChild(novoItem)
 
-// localStorage.setItem('nome1', 'João')
-// localStorage.setItem('nome2', 'Daniel')
-// localStorage.setItem('nome3', 'Thiago')
+novoItem.remove()
 
-// const usuario = {
-//     nome: 'Daniel',
-//     idade: '36'
-// }
+document.querySelector("#addItem").addEventListener('click', () => {
+const novoItem2 = createContext("li")
+novoItem2 
+}) 
+ */
 
-// localStorage.setItem('usuario', JSON.stringify(usuario))
+/** 
+const usuario = {nome: "daniel", idade: "36"}
+localStorage.setItem("usuario",JSON.stringify(usuario))
 
-// const valorRecuperado = JSON.parse(localStorage.getItem('usuario'))
+const valorRecuperado = JSON.parse(localStorage.getItem("usuario"))
 
-// console.log(valorRecuperado)
-// console.log(valorRecuperado.nome)
+console.log(valorRecuperado)
+*/
 
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
+
+const renderizarTarefas = () => {
+    const lista = document.getElementById("lista-tarefas")
+    lista.innerHTML = ""
+    tarefas.forEach((t, i) => {
+
+        const li = document.createElement("li")
+        li.textContent = lista.appendChild(li)
+    })
+}
+
+renderizarTarefas
+
+
+document.getElementById("form-tarefa").onsubmit = (e) => {
+   e.preventDefault()
+
+   const input = document.getElementById("input-tarefas")
+   tarefas.push(input.value)
+   localStorage.setItem("tarefas", JSON.stringify(tarefas))
+   input.value =""
+   renderizarTarefas()
+
+}
